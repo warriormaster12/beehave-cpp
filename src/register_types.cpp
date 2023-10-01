@@ -1,5 +1,7 @@
 #include "register_types.h"
+#include "beehave_node.h"
 #include "beehave_tree.h"
+#include "blackboard.h"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
@@ -13,6 +15,8 @@ void initialize_beehave_module(ModuleInitializationLevel p_level)
 		return;
 	}
 	ClassDB::register_class<BeehaveTree>();
+	ClassDB::register_class<Blackboard>();
+	ClassDB::register_class<BeehaveNode>();
 }
 
 void uninitialize_beehave_module(ModuleInitializationLevel p_level) {

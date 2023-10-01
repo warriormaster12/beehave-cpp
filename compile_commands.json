@@ -5412,6 +5412,12 @@
         "output": "src/beehave_tree.os"
     },
     {
+        "command": "g++ -o src/blackboard.os -c -std=c++17 -fPIC -Wwrite-strings -m64 -march=x86-64 -O2 -fPIC -DLINUX_ENABLED -DUNIX_ENABLED -DDEBUG_ENABLED -DDEBUG_METHODS_ENABLED -DNDEBUG -Igodot-cpp/gdextension -Igodot-cpp/include -Igodot-cpp/gen/include -Isrc src/blackboard.cpp",
+        "directory": "/home/alexander/ProgrammingProjects/C++/beehave-cpp",
+        "file": "src/blackboard.cpp",
+        "output": "src/blackboard.os"
+    },
+    {
         "command": "g++ -o src/register_types.os -c -std=c++17 -fPIC -Wwrite-strings -m64 -march=x86-64 -O2 -fPIC -DLINUX_ENABLED -DUNIX_ENABLED -DDEBUG_ENABLED -DDEBUG_METHODS_ENABLED -DNDEBUG -Igodot-cpp/gdextension -Igodot-cpp/include -Igodot-cpp/gen/include -Isrc src/register_types.cpp",
         "directory": "/home/alexander/ProgrammingProjects/C++/beehave-cpp",
         "file": "src/register_types.cpp",
