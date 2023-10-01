@@ -2,6 +2,7 @@
 #define BEEHAVETREE_H
 
 #include "blackboard.h"
+#include "godot_cpp/core/binder_common.hpp"
 #include "godot_cpp/variant/node_path.hpp"
 #include <godot_cpp/classes/node.hpp>
 
@@ -18,18 +19,17 @@ namespace godot {
 
         void set_tree_enabled(bool p_enabled);
         bool get_tree_enabled() const {return tree_enabled;}
-        void set_actor(NodePath p_actor_path);
-        Node *get_actor() const {return actor;}
-        void set_blackboard(NodePath p_blackboard_path);
-        Blackboard *get_blackboard() const {return blackboard;}
+        void set_actor(const NodePath &p_actor_path);
+        NodePath get_actor() const {return actor;}
+        void set_blackboard(const NodePath &p_blackboard_path);
+        NodePath get_blackboard() const {return blackboard;}
 
-        virtual void _ready() override;
-        virtual void _physics_process(double delta) override;
+        void _notification(int p_what);
 
     private:
         bool tree_enabled;
-        Node *actor;
-        Blackboard *blackboard;
+        NodePath actor;
+        NodePath blackboard;
         int status;
 
         int tick();
@@ -37,7 +37,6 @@ namespace godot {
     protected:
         static void _bind_methods();
     };
-
 }
 
 #endif

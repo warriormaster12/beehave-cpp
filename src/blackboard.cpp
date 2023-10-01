@@ -40,7 +40,7 @@ Blackboard::~Blackboard() {
 
     //helper functions
     ClassDB::bind_method(D_METHOD("set_value", "key", "value"), &Blackboard::set_value);
-	ClassDB::bind_method(D_METHOD("get_value"), &Blackboard::get_value);
+	ClassDB::bind_method(D_METHOD("get_value", "key", "default_value"), &Blackboard::get_value);
     ClassDB::bind_method(D_METHOD("has_value"), &Blackboard::has_value);
 
     ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "data", PROPERTY_HINT_NONE), "set_data", "get_data");

@@ -1,13 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccfbkgsfrxxgo"]
 
-[ext_resource type="Script" path="res://test_scene/test_beehave.gd" id="1_f4bik"]
+[ext_resource type="Script" path="res://test_scene/ActionLeaf.gd" id="2_o11cw"]
 
-[node name="actor" type="Node3D"]
+[node name="Jeff" type="Node3D"]
 
 [node name="BeehaveTree" type="BeehaveTree" parent="."]
+enabled = true
+actor = NodePath("..")
+blackboard = NodePath("../Blackboard")
 
-[node name="BeehaveNode" type="BeehaveNode" parent="BeehaveTree"]
-script = ExtResource("1_f4bik")
+[node name="ActionLeaf" type="BeehaveNode" parent="BeehaveTree"]
+script = ExtResource("2_o11cw")
 
 [node name="Blackboard" type="Blackboard" parent="."]
 data = {}
